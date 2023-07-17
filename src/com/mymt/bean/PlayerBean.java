@@ -28,6 +28,9 @@ public class PlayerBean implements Serializable{
     private int toward;     // 当前朝向 0-左 1-下 2-右 3-上
     private int posX;       // X 坐标值
     private int posY;       // Y 坐标值
+    private int state;      // 状态
+    public static final Integer STATE_NORMAL = 0;   //正常状态
+    public static final Integer STATE_TALKING = 1;  //正在对话
 
     // 构造器 游戏开始时主角的初始属性
     public PlayerBean() {
@@ -45,6 +48,7 @@ public class PlayerBean implements Serializable{
         this.toward = 1;    // 初始朝向
         this.posX = 5;      // 初始 X坐标
         this.posY = 9;      // 初始 Y坐标
+        this.state = 0;     // 初始状态
 
 //        // 测试用的数据
 //        this.level = 15;
@@ -172,5 +176,13 @@ public class PlayerBean implements Serializable{
 
     public void setPosY(int posY) {
         this.posY = posY;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }

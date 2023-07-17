@@ -1,6 +1,7 @@
 package com.mymt;
 
 import com.mymt.bean.ItemsBean;
+import com.mymt.bean.PlayerBean;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,7 +45,7 @@ public class Main {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                if (!MTGame.inConversation)
+                if (!MTGame.inConversation && PlayerBean.STATE_NORMAL.equals(playerBean_1.getState()))
                     switch (e.getKeyCode()) {
 
                         case VK_DOWN:   // 键盘 ↓
