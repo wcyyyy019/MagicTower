@@ -1,5 +1,6 @@
 package com.mymt.util;
 
+import com.mymt.bean.PlayerBean;
 import com.mymt.data.ImageData;
 
 import javax.swing.*;
@@ -45,6 +46,7 @@ public class DialogUtil {
         dialogLPane.add(text, 3, 0);
         gamePanel.add(dialogLPane);
         gamePanel.repaint();
+        playerBean_1.setState(PlayerBean.STATE_TALKING);
 
         gameFrame.addKeyListener(new KeyListener() {
             int count = 0;
@@ -64,6 +66,7 @@ public class DialogUtil {
                     if (count >= messages.length) {
                         inConversation = false;
                         gameFrame.removeKeyListener(this);
+                        playerBean_1.setState(PlayerBean.STATE_NORMAL);
                         return;
                     }
                     if (count % 2 == 1) {

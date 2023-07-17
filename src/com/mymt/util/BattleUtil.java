@@ -28,6 +28,7 @@ public class BattleUtil {
     private static final Font BATTLE_FONT = new Font("Serif", 0, 35);
 
     public static JLayeredPane battleLPane = new JLayeredPane();       // 战斗信息面板
+    public static int PLAY_SPEED = 100;
 
     private JLabel battleBgLabel;
     private JLabel monsterImg;                      // 怪物图片
@@ -112,7 +113,7 @@ public class BattleUtil {
         player_defend.setText(MTGame.playerBean_1.getDefend() + "");
         battleLPane.setVisible(true);
         MTGame.inConversation = true;
-        Timer bFrame = new Timer(500, new ActionListener() {
+        Timer bFrame = new Timer(PLAY_SPEED, new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ex) {

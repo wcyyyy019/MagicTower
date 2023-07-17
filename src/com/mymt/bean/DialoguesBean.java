@@ -6,6 +6,7 @@ import com.mymt.data.MapData;
 import com.mymt.util.DialogUtil;
 
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 
 import static com.mymt.MTGame.currentFloor;
 
@@ -19,11 +20,17 @@ import static com.mymt.MTGame.currentFloor;
 public class DialoguesBean {
 
     private static int id;
+    private static Boolean[] isFirst;
+    static {
+        isFirst = new Boolean[30];
+        Arrays.fill(isFirst, true);
+    }
 
     public DialoguesBean(int id) {
         this.id = id;
 
         String[] messages;
+
         BufferedImage[] characters = new BufferedImage[50];
         int[] w = new int[50];
         int[] h = new int[50];
@@ -82,9 +89,12 @@ public class DialoguesBean {
                 MapData.LvMap[currentFloor][8][4] = 24;
 //                MTGame.baseBeanMap[0][4][8] = new DialoguesBean(1);
 //                MTGame.baseBeanMap[0][5][8] = null;
-                MTGame.playerBean_1.setYkey(MTGame.playerBean_1.getYkey() + 1);
-                MTGame.playerBean_1.setBkey(MTGame.playerBean_1.getBkey() + 1);
-                MTGame.playerBean_1.setRkey(MTGame.playerBean_1.getRkey() + 1);
+                if (isFirst[id]) {
+                    MTGame.playerBean_1.setYkey(MTGame.playerBean_1.getYkey() + 1);
+                    MTGame.playerBean_1.setBkey(MTGame.playerBean_1.getBkey() + 1);
+                    MTGame.playerBean_1.setRkey(MTGame.playerBean_1.getRkey() + 1);
+                    isFirst[id] = false;
+                }
                 break;
             case 1:     // 第 0 层 仙子 找到十字架后
 //                if (!MTGame.hasCross) {

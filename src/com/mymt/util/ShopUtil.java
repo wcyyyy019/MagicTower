@@ -1,6 +1,7 @@
 package com.mymt.util;
 
 import com.mymt.MTGame;
+import com.mymt.bean.PlayerBean;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +25,7 @@ public class ShopUtil {
 
     // 商店事件
     public static void shop(int id) {
+        playerBean_1.setState(PlayerBean.STATE_TALKING);
         switch (id) {
             case 0:     // 第 3 层商店
                 choice = new String[]{"▶增加 800 点生命（25 金币）", "▷增加 4 点攻击（25 金币）", "▷增加 4 点防御（25 金币）", "▷离开商店"};
@@ -117,6 +119,7 @@ public class ShopUtil {
                                     gameFrame.repaint();
                                     inConversation = false;
                                     gameFrame.removeKeyListener(this);
+                                    playerBean_1.setState(PlayerBean.STATE_NORMAL);
                                     break;
                             }
                             break;
