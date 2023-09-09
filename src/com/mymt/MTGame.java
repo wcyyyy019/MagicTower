@@ -22,9 +22,6 @@ import static com.mymt.data.MapData.*;
  * 主要是根据 魔塔 v1.12 这个版本 进行仿制。
  * <p>
  * 目前所使用的资源文件（72 pix）仅对屏幕分辨率 1920 * 1080 或以上的进行了适配。后续将适配 1280 * 720（54 pix）
- * <p>
- * GitHub 地址：https://github.com/gdut-yy/MagicTower
- * <p>
  * 绘制主游戏面板，交互函数，响应键盘输入。
  *
  * @author ZYY
@@ -56,7 +53,7 @@ public class MTGame extends JPanel {
     // 构造器
     public MTGame() {
         setLayout(null);
-        gameFrame = new JFrame("魔塔 v1.12 Java仿制版     【 GitHub地址：https://github.com/gdut-yy/MagicTower 】");
+        gameFrame = new JFrame("魔塔 v1.12");
 
         // 初始化 时间面板
         timeLabel = new JLabel();
